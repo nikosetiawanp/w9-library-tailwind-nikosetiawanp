@@ -1,0 +1,235 @@
+{
+    "books": [
+        {
+            "title": "It Ends With Us",
+            "authors": [
+                "Colleen Hoover"
+            ],
+            "subjects": [
+                "Fiction",
+                "Romance",
+                "Contemporary"
+            ],
+            "image": "https://covers.openlibrary.org/b/id/13259349-L.jpg"
+        },
+        {
+            "title": "Latidos Que No Dije",
+            "authors": [
+                "Roos"
+            ],
+            "subjects": [],
+            "image": "https://covers.openlibrary.org/b/id/13161561-L.jpg"
+        },
+        {
+            "title": "Rich Dad, Poor Dad",
+            "authors": [
+                "Robert T. Kiyosaki",
+                "Sharon L. Lechter",
+                "Tim Wheeler"
+            ],
+            "subjects": [
+                "Rich people",
+                "Personal finance",
+                "Investments"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL16980586M-M.jpg"
+        },
+        {
+            "title": "The 48 Laws of Power",
+            "authors": [
+                "Robert Greene"
+            ],
+            "subjects": [
+                "Business",
+                "Control (Psychology)",
+                "Contrôle (Psychologie)"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL25418275M-M.jpg"
+        },
+        {
+            "title": "The Subtle Art of Not Giving a F*ck",
+            "authors": [
+                "Mark Manson"
+            ],
+            "subjects": [
+                "Self-realization",
+                "Conduct of life",
+                "Conducta de vida"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL28230579M-M.jpg"
+        },
+        {
+            "title": "A Court of Mist and Fury",
+            "authors": [
+                "Sarah J. Maas"
+            ],
+            "subjects": [
+                "Fantasy",
+                "Fiction",
+                "Fairies"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL26992991M-M.jpg"
+        },
+        {
+            "title": "It Starts with Us",
+            "authors": [
+                "Colleen Hoover"
+            ],
+            "subjects": [
+                "Contemporary",
+                "Romance",
+                "Friendship"
+            ],
+            "image": "https://covers.openlibrary.org/b/id/12749873-M.jpg"
+        },
+        {
+            "title": "Atomic Habits",
+            "authors": [
+                "James Clear"
+            ],
+            "subjects": [
+                "Habit",
+                "Habit breaking",
+                "Behavior modification"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL27918581M-M.jpg"
+        },
+        {
+            "title": "Think and Grow Rich",
+            "authors": [
+                "Napoleon Hill"
+            ],
+            "subjects": [
+                "Business",
+                "Exito en los negocios",
+                "Finance"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL24228852M-M.jpg"
+        },
+        {
+            "title": "The Hungler Games",
+            "authors": [
+                "Suzanne Collins"
+            ],
+            "subjects": [
+                "Severe poverty",
+                "Starvation",
+                "Oppression"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL39475933M-M.jpg"
+        },
+        {
+            "title": "The Psychology of Money",
+            "authors": [
+                "Morgan Housel"
+            ],
+            "subjects": [
+                "Money",
+                "Consumption (Economics)",
+                "Quality of Life"
+            ],
+            "image": "https://covers.openlibrary.org/b/id/10389354-M.jpg"
+        },
+        {
+            "title": "Shatter Me",
+            "authors": [
+                "Tahereh Mafi"
+            ],
+            "subjects": [
+                "Love",
+                "Ability",
+                "Dictatorship"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL24917781M-M.jpg"
+        },
+        {
+            "title": "A Game of Thrones",
+            "authors": [
+                "George R. R. Martin"
+            ],
+            "subjects": [
+                "Action & adventure",
+                "American fantasy fiction",
+                "Betrayal"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL26425330M-M.jpg"
+        },
+        {
+            "title": "I Have to Tell You Something",
+            "authors": [
+                "Zara Bas"
+            ],
+            "subjects": [],
+            "image": "https://covers.openlibrary.org/b/id/13125753-M.jpg"
+        },
+        {
+            "title": "The 7 Habits of Highly Effective People",
+            "authors": [
+                "Stephen R. Covey",
+                "Sean Covey"
+            ],
+            "subjects": [
+                "Success - Psychological aspects",
+                "Character",
+                "Success"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL23814995M-M.jpg"
+        },
+        {
+            "title": "Fifty Shades of Grey",
+            "authors": [
+                "E.L. James"
+            ],
+            "subjects": [
+                "Man-woman relationships",
+                "Fiction",
+                "Contemporary Women"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL25434854M-M.jpg"
+        },
+        {
+            "title": "A Gentle Reminder",
+            "authors": [
+                "Bianca Sparacino"
+            ],
+            "subjects": [],
+            "image": "https://covers.openlibrary.org/b/id/13131619-M.jpg"
+        },
+        {
+            "title": "Ugly Love",
+            "authors": [
+                "Colleen Hoover"
+            ],
+            "subjects": [
+                "Fiction",
+                "Romance",
+                "Contemporary"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL29191495M-M.jpg"
+        },
+        {
+            "title": "12 Rules for Life",
+            "authors": [
+                "Jordan B. Peterson"
+            ],
+            "subjects": [
+                "Conduct of life",
+                "Philosophy",
+                "Social"
+            ],
+            "image": "https://covers.openlibrary.org/b/id/8131760-M.jpg"
+        },
+        {
+            "title": "All About Love",
+            "authors": [
+                "Bell Hooks"
+            ],
+            "subjects": [
+                "Feminist ethics",
+                "Love",
+                "Social science"
+            ],
+            "image": "https://covers.openlibrary.org/b/olid/OL7285714M-M.jpg"
+        }
+    ]
+}

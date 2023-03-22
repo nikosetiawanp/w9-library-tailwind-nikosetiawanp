@@ -1,0 +1,11 @@
+{
+  "name": "library-tailwind",
+  "version": "1.0.0",
+  "description": "Week 9 assignment",
+  "main": "index.js",
+  "author": "{YOUR_NAME}",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
