@@ -1,69 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Tailwind</title>
 
-    <link href="/dist/output.css" rel="stylesheet">
-</head>
-<body>
-    <div class="flex flex-col h-screen">
-        <header>
-            <nav>
-                <div>
-                    <div>
-                        <div>
-                            <button id="m-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
-                                <span class="sr-only">Open main menu</span>
-                                <!-- closed menu -->
-                                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
-                                <!-- opened menu -->
-                                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg" alt="RevoU Library">
-                            </div>
-                            <div class="hidden sm:ml-6 sm:block">
-                                <div class="flex space-x-4">
-                                    <a href="index.html" aria-current="page">Library</a>
-              
-                                    <a href="books.html">Books</a>
-              
-                                    <a href="information.html">Information</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
-                <div id="m-menu">
-                    <div>
-                        <a href="index.html" aria-current="page">Library</a>
-              
-                        <a href="books.html">Books</a>
-              
-                        <a href="information.html">Information</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main class="flex-1 bg-library-2">
-            Books
-        </main>
-        <footer>
-            <p>
-                RevoU Library
-            </p>
-        </footer>
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-library-2" onload="loadBooks()">
+    <nav
+      class="bg-gray-800 flex flex-row justify-center items-center md:justify-start gap-10 h-16 px-8 relative"
+    >
+      <!-- HAMBURGER -->
+      <button
+        id="menu-button"
+        type="button"
+        class="md:hidden absolute left-4 inline-flex items-center justify-center p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white rounded-lg"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        onclick="toggleMobileMenu()"
+      >
+        <img class="h-4" src="../assets/hamburger.svg" alt="hamburger" />
+      </button>
+      <!-- CLOSE -->
+      <button
+        id="close-button"
+        type="button"
+        class="md:hidden absolute left-4 hidden items-center justify-center p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white rounded-lg"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        onclick="closeMobileMenu()"
+      >
+        <img class="h-4" src="../assets/close.svg" alt="close" />
+      </button>
+      <!-- LOGO -->
+      <img
+        class="h-8"
+        src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg"
+        alt="RevoU Library"
+      />
+      <ul class="text-white text-sm font-medium hidden md:flex gap-8">
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            href="./index.html"
+            >Library</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-gray-700 bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            href="./books.html"
+            >Books</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            href="./information.html"
+            >Information</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- DROPDOWN -->
+    <div
+      class="bg-gray-800 md:hidden p-4 hidden flex-col text-white"
+      id="drop-down"
+    >
+      <a
+        class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-full"
+        href="./index.html"
+        >Library</a
+      >
+      <a
+        class="hover:bg-gray-700 bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-full"
+        href="./books.html"
+        >Books</a
+      >
+      <a
+        class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-full"
+        href="./information.html"
+        >Information</a
+      >
     </div>
+    <header class="flex justify-center items-start p-4 gap-4">
+      <!-- CONTAINER -->
+      <div
+        class="container flex flex-col items-center gap-2 bg-gray-800 p-6 rounded-lg"
+      >
+        <!-- PREVIOUS 1 2 NEXT -->
+        <div class="rounded-md border border-slate-700 flex text-white mb-8">
+          <button class="px-3 hover:bg-gray-700 text-center">Previous</button>
+          <button class="border-x border-slate-700 p-2 px-4 hover:bg-gray-700">
+            1
+          </button>
+          <button class="border-x border-slate-700 p-2 px-4 hover:bg-gray-700">
+            2
+          </button>
+          <button class="px-3 hover:bg-gray-700">Next</button>
+        </div>
+        <div class="container flex gap-4">
+          <!-- BOOK 1 -->
+          <div
+            class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <a href="#">
+              <img
+                class="h-72 mx-auto"
+                src="https://covers.openlibrary.org/b/id/10587033-L.jpg"
+                alt="The Lord of the Rings: The Fellowship of the Ring"
+              />
+            </a>
+            <div class="p-5 flex flex-col items-center">
+              <a href="#">
+                <h5
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  The Lord of the Rings: The Fellowship of the Ring
+                </h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <b>Author(s):</b> J.R.R. Tolkien
+              </p>
+            </div>
+          </div>
+          <!-- BOOK 2 -->
+          <div
+            class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <a href="#">
+              <img
+                class="h-72 mx-auto"
+                src="https://covers.openlibrary.org/b/id/13179392-L.jpg"
+                alt="The Lord of the Rings: The Return of the Kings"
+              />
+            </a>
+            <div class="p-5">
+              <a href="#">
+                <h5
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  The Lord of the Rings: The Return of the Kings
+                </h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <b>Author(s):</b> J.R.R. Tolkien
+              </p>
+            </div>
+          </div>
+          <!-- BOOK 3 -->
+          <div
+            class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <a href="#">
+              <img
+                class="h-72 mx-auto"
+                src="https://covers.openlibrary.org/b/id/10290014-L.jpg"
+                alt="Lord of the Rings: The Two Towers v. 2"
+              />
+            </a>
+            <div class="p-5">
+              <a href="#">
+                <h5
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  Lord of the Rings: The Two Towers v. 2
+                </h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <b>Author(s):</b> J.R.R. Tolkien
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <footer
+      class="py-3 bg-gray-800 text-white text-xs flex justify-center fixed bottom-0 w-screen"
+    >
+      RevoU Library
+    </footer>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
