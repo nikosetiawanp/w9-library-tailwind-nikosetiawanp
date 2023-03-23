@@ -1,69 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Tailwind</title>
 
-    <link href="/dist/output.css" rel="stylesheet">
-</head>
-<body>
-    <div class="flex flex-col h-screen">
-        <header>
-            <nav>
-                <div>
-                    <div>
-                        <div>
-                            <button id="m-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
-                                <span class="sr-only">Open main menu</span>
-                                <!-- closed menu -->
-                                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
-                                <!-- opened menu -->
-                                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg" alt="RevoU Library">
-                            </div>
-                            <div class="hidden sm:ml-6 sm:block">
-                                <div class="flex space-x-4">
-                                    <a href="index.html" aria-current="page">Library</a>
-              
-                                    <a href="books.html">Books</a>
-              
-                                    <a href="information.html">Information</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
-                <div id="m-menu">
-                    <div>
-                        <a href="index.html" aria-current="page">Library</a>
-              
-                        <a href="books.html">Books</a>
-              
-                        <a href="information.html">Information</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main class="flex-1 bg-library-1">
-            Library
-        </main>
-        <footer>
-            <p>
-                RevoU Library
-            </p>
-        </footer>
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-library-1">
+    <!-- NAV -->
+    <nav
+      class="bg-gray-800 flex justify-center items-center md:justify-start gap-8 h-16 px-8"
+    >
+      <!-- HAMBURGER -->
+
+      <button
+        id="menu-button"
+        type="button"
+        class="md:hidden inline-flex items-center justify-center left-0 p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white rounded-lg"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <img class="h-6" src="../assets/hamburger.svg" alt="hamburger" />
+      </button>
+
+      <!-- LOGO -->
+      <img
+        class="h-8"
+        src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg"
+        alt="RevoU Library"
+      />
+      <ul class="text-white text-sm font-medium hidden md:flex">
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white bg-gray-900 rounded-md px-3 py-2 text-sm font-medium"
+            href="./books.html"
+            >Library</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            href="./books.html"
+            >Books</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            href="./information.html"
+            >Information</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- DROPDOWN -->
+    <div class="bg-gray-800 md:hidden p-4 flex">
+      <ul
+        class="text-white text-md font-medium flex flex-col items-start gap-4 space-y-1"
+      >
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white bg-gray-900 rounded-md px-3 py-2 text-sm font-medium w-full"
+            href="./books.html"
+            >Library</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-full"
+            href="./books.html"
+            >Books</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-full"
+            href="./information.html"
+            >Information</a
+          >
+        </li>
+      </ul>
     </div>
+    <!-- HEADER -->
+    <header class="flex flex-col items-center p-8">
+      <div
+        class="container flex flex-col items-center bg-gray-800 p-8 rounded-lg gap-4 mb-8 max-w-3xl"
+      >
+        <span class="text-white text-md text-center"
+          >Welcome to RevoU Library! Use this search to find books
+          quickly!</span
+        >
+        <!-- SEARCH -->
+        <div class="w-full relative flex">
+          <input
+            type="search"
+            id="search"
+            class="text-white text-sm w-full h-12 border border-slate-600 bg-gray-700 p-2 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Search"
+          />
+          <!-- BUTTON -->
+          <button
+            class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-1 h-8 rounded-md absolute right-2 self-center"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div
+        class="container flex flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl"
+      >
+        <div class="border border-slate-600 w-full h-10 rounded-lg p-8"></div>
+      </div>
+    </header>
+
+    <footer
+      class="py-3 bg-gray-800 text-white text-xs flex justify-center fixed bottom-0 w-screen"
+    >
+      RevoU Library
+    </footer>
+    <!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
