@@ -91,6 +91,9 @@ let loadSearch = () => {
 // SEARCH BOOK
 let searchBook = () => {
   let div = getElementByTagName("div");
+  for (let i = 0; i < div.length; i++) [0];
+  if (div) {
+  }
 };
 
 /**
