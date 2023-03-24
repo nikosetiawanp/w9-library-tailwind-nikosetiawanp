@@ -95,7 +95,7 @@
           >Welcome to RevoU Library! Use this search to find books
           quickly!</span
         >
-        <!-- SEARCH -->
+        <!-- SEARCH FORM-->
         <div class="w-full relative flex">
           <input
             type="search"
@@ -106,6 +106,8 @@
           <!-- BUTTON -->
           <button
             class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-1 h-8 rounded-md absolute right-2 self-center"
+            id="submit"
+            onclick="searchBook()"
           >
             Search
           </button>
@@ -114,7 +116,7 @@
 
       <!-- RESULT -->
       <div
-        class="container flex flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl"
+        class="container hidden flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl text-white"
         id="search-result"
       >
         <!-- <div class="border border-slate-600 w-full h-10 rounded-lg p-8"></div> -->
@@ -204,3 +206,6 @@
     <script src="app.js"></script>
   </body>
 </html>
+
+<!-- RESULT-TEMPLATE -->
+<div id="result-template"></div>

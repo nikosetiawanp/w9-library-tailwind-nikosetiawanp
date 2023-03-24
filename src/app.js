@@ -7,6 +7,7 @@ function getPageFromUrl() {
   return page;
 }
 
+// GET DATA FROM JSON
 async function getBooksData() {
   let response = await fetch("./data.json");
   let json = await response.json();
@@ -28,8 +29,49 @@ let closeMobileMenu = () => {
   dropDown.classList.replace("flex", "hidden");
 };
 
-let loadLibrary = () => {
-  document.getElementById("");
+// DISPLAY BOOK TO PAGE
+
+let loadBook = () => {
+  fetch("data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let image = document.getElementById("image");
+      let title = document.getElementById("title");
+      let author = document.getElementById("author");
+      let bookLibrary = document.getElementById("book-library");
+      let placeholderLibrary = document.getElementById("placeholder-library");
+
+      image.src = data.books[0].image;
+      title.innerText = data.books[0].title;
+      author.innerText = data.books[0].authors;
+
+      for (let i = 1; i <= data.books.length; i++) {
+        bookLibrary.innerHTML += placeholderLibrary.innerHTML;
+        image.src = data.books[i].image;
+        title.innerText = data.books[i].title;
+        author.innerText = data.books[i].authors;
+      }
+    });
+};
+
+// SEARCH BOOK
+let searchBook = () => {
+  fetch("data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let search = document.getElementById("search").value;
+      let submit = document.getElementById("submit");
+      let result = document.getElementById("search-result");
+      let title = data.books[i].title;
+
+      console.log(title);
+
+      if (!search) {
+        console.log("The search bar is still empty!");
+        result.classList.replace("hidden", "flex");
+        result.innerHTML = "Your search is still empty";
+      }
+    });
 };
 
 /**

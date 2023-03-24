@@ -8,7 +8,7 @@
 
     <link href="/dist/output.css" rel="stylesheet" />
   </head>
-  <body class="bg-library-2" onload="loadBooks()">
+  <body class="bg-library-2" onload="loadBook()">
     <nav
       class="bg-gray-800 flex flex-row justify-center items-center md:justify-start gap-10 h-16 px-8 relative"
     >
@@ -85,96 +85,31 @@
         >Information</a
       >
     </div>
-    <header class="flex justify-center items-start p-4 gap-4">
+    <header class="flex flex-wrap justify-center items-start p-4 gap-4">
       <!-- CONTAINER -->
       <div
-        class="container flex flex-col items-center gap-2 bg-gray-800 p-6 rounded-lg"
+        class="container flex flex-col items-center gap-2 bg-gray-800 p-6 rounded-lg mb-8"
       >
         <!-- PREVIOUS 1 2 NEXT -->
-        <div class="rounded-md border border-slate-700 flex text-white mb-8">
-          <button class="px-3 hover:bg-gray-700 text-center">Previous</button>
+        <div
+          class="rounded-md border border-slate-700 text-white mb-8 flex items-center"
+        >
+          <button class="h-full p-2 px-4 hover:bg-gray-700 text-center">
+            Previous
+          </button>
           <button class="border-x border-slate-700 p-2 px-4 hover:bg-gray-700">
             1
           </button>
           <button class="border-x border-slate-700 p-2 px-4 hover:bg-gray-700">
             2
           </button>
-          <button class="px-3 hover:bg-gray-700">Next</button>
+          <button class="h-full p-2 px-4 hover:bg-gray-700">Next</button>
         </div>
-        <div class="container flex gap-4">
-          <!-- BOOK 1 -->
-          <div
-            class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-          >
-            <a href="#">
-              <img
-                class="h-72 mx-auto"
-                src="https://covers.openlibrary.org/b/id/10587033-L.jpg"
-                alt="The Lord of the Rings: The Fellowship of the Ring"
-              />
-            </a>
-            <div class="p-5 flex flex-col items-center">
-              <a href="#">
-                <h5
-                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                >
-                  The Lord of the Rings: The Fellowship of the Ring
-                </h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <b>Author(s):</b> J.R.R. Tolkien
-              </p>
-            </div>
-          </div>
-          <!-- BOOK 2 -->
-          <div
-            class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-          >
-            <a href="#">
-              <img
-                class="h-72 mx-auto"
-                src="https://covers.openlibrary.org/b/id/13179392-L.jpg"
-                alt="The Lord of the Rings: The Return of the Kings"
-              />
-            </a>
-            <div class="p-5">
-              <a href="#">
-                <h5
-                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                >
-                  The Lord of the Rings: The Return of the Kings
-                </h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <b>Author(s):</b> J.R.R. Tolkien
-              </p>
-            </div>
-          </div>
-          <!-- BOOK 3 -->
-          <div
-            class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-          >
-            <a href="#">
-              <img
-                class="h-72 mx-auto"
-                src="https://covers.openlibrary.org/b/id/10290014-L.jpg"
-                alt="Lord of the Rings: The Two Towers v. 2"
-              />
-            </a>
-            <div class="p-5">
-              <a href="#">
-                <h5
-                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                >
-                  Lord of the Rings: The Two Towers v. 2
-                </h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <b>Author(s):</b> J.R.R. Tolkien
-              </p>
-            </div>
-          </div>
-        </div>
+        <!-- BOOK LIBRARY -->
+        <div
+          id="book-library"
+          class="container flex flex-wrap gap-4 md:grid md:grid-cols-3"
+        ></div>
       </div>
     </header>
 
@@ -183,6 +118,25 @@
     >
       RevoU Library
     </footer>
+
     <script src="app.js"></script>
   </body>
 </html>
+
+<!-- PLACEHOLDER LIBRARY -->
+<div id="placeholder-library" class="hidden">
+  <div
+    class="w-full text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 md:w-max-[50%]"
+  >
+    <img id="image" class="h-72 mx-auto" src="" alt="image" />
+    <h5
+      id="title"
+      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    ></h5>
+    <p
+      id="author"
+      class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+    ></p>
+  </div>
+</div>
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
