@@ -29,49 +29,68 @@ let closeMobileMenu = () => {
   dropDown.classList.replace("flex", "hidden");
 };
 
-// DISPLAY BOOK TO PAGE
-
-let loadBook = () => {
+// LOAD TO BOOK
+let loadBooks = () => {
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
       let image = document.getElementById("image");
       let title = document.getElementById("title");
       let author = document.getElementById("author");
+      let subject = document.getElementById("subject");
       let bookLibrary = document.getElementById("book-library");
+      let searchResult = document.getElementById("search-result");
       let placeholderLibrary = document.getElementById("placeholder-library");
+      let placeholderResult = document.getElementById("placeholder-result");
 
       image.src = data.books[0].image;
       title.innerText = data.books[0].title;
       author.innerText = data.books[0].authors;
+      // subject.innerText = data.books[0].subjects;
 
       for (let i = 1; i <= data.books.length; i++) {
         bookLibrary.innerHTML += placeholderLibrary.innerHTML;
+        // searchResult.innerHTML += placeholderResult.innerHTML;
         image.src = data.books[i].image;
         title.innerText = data.books[i].title;
         author.innerText = data.books[i].authors;
+        // subject.innerText = data.books[i].subjects;
+      }
+    });
+};
+
+// LOAD TO INDEX HTML
+let loadSearch = () => {
+  fetch("data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let image = document.getElementById("image");
+      let title = document.getElementById("title");
+      let author = document.getElementById("author");
+      let subject = document.getElementById("subject");
+      let bookLibrary = document.getElementById("book-library");
+      let searchResult = document.getElementById("search-result");
+      let placeholderLibrary = document.getElementById("placeholder-library");
+      let placeholderResult = document.getElementById("placeholder-result");
+
+      image.src = data.books[0].image;
+      title.innerText = data.books[0].title;
+      author.innerText = data.books[0].authors;
+      subject.innerText = data.books[0].subjects;
+
+      for (let i = 1; i <= data.books.length; i++) {
+        searchResult.innerHTML += placeholderResult.innerHTML;
+        image.src = data.books[i].image;
+        title.innerText = data.books[i].title;
+        author.innerText = data.books[i].authors;
+        subject.innerText = data.books[i].subjects;
       }
     });
 };
 
 // SEARCH BOOK
 let searchBook = () => {
-  fetch("data.json")
-    .then((response) => response.json())
-    .then((data) => {
-      let search = document.getElementById("search").value;
-      let submit = document.getElementById("submit");
-      let result = document.getElementById("search-result");
-      let title = data.books[i].title;
-
-      console.log(title);
-
-      if (!search) {
-        console.log("The search bar is still empty!");
-        result.classList.replace("hidden", "flex");
-        result.innerHTML = "Your search is still empty";
-      }
-    });
+  let div = getElementByTagName("div");
 };
 
 /**

@@ -8,7 +8,7 @@
 
     <link href="/dist/output.css" rel="stylesheet" />
   </head>
-  <body class="bg-library-1">
+  <body class="bg-library-1" onload="loadSearch()">
     <!-- NAV -->
     <nav
       class="bg-gray-800 flex flex-row justify-center items-center md:justify-start gap-10 h-16 px-8 relative"
@@ -114,85 +114,12 @@
         </div>
       </div>
 
-      <!-- RESULT -->
+      <!-- RESULT CONTAINER-->
       <div
-        class="container hidden flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl text-white"
+        class="container flex flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl text-white mb-8"
         id="search-result"
       >
-        <!-- <div class="border border-slate-600 w-full h-10 rounded-lg p-8"></div> -->
         <!-- SEARCH RESULT -->
-        <div class="my-6">
-          <a
-            href="#"
-            class="flex flex-col items-center bg-white border border-gray-200 p-4 shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-          >
-            <img
-              class="object-cover w-full rounded-lg h-96 md:h-auto md:w-24"
-              src="https://covers.openlibrary.org/b/id/10587033-L.jpg"
-              alt="The Lord of the Rings: The Fellowship of the Ring"
-            />
-            <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5
-                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-              >
-                The Lord of the Rings: The Fellowship of the Ring
-              </h5>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <b>Author(s):</b> J.R.R. Tolkien
-              </p>
-              <caption>
-                Subjects: Elves, Dwarves, evil, fear, friends
-              </caption>
-            </div>
-          </a>
-          <a
-            href="#"
-            class="flex flex-col items-center bg-white border border-gray-200 p-4 shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-          >
-            <img
-              class="object-cover w-full rounded-lg h-96 md:h-auto md:w-24"
-              src="https://covers.openlibrary.org/b/id/13179392-L.jpg"
-              alt="The Lord of the Rings: The Return of the Kings"
-            />
-            <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5
-                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-              >
-                The Lord of the Rings: The Return of the Kings
-              </h5>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <b>Author(s):</b> J.R.R. Tolkien
-              </p>
-              <caption>
-                Subjects: Elves, Hobbits, The Lord of the Rings, hope, fear
-              </caption>
-            </div>
-          </a>
-          <a
-            href="#"
-            class="flex flex-col items-center bg-white border border-gray-200 p-4 shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-          >
-            <img
-              class="object-cover w-full rounded-lg h-96 md:h-auto md:w-24"
-              src="https://covers.openlibrary.org/b/id/10290014-L.jpg"
-              alt="Lord of the Rings: The Two Towers v. 2"
-            />
-            <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5
-                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-              >
-                Lord of the Rings: The Two Towers v. 2
-              </h5>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                <b>Author(s):</b> J.R.R. Tolkien
-              </p>
-              <caption>
-                Subjects: Ents, Orcs, hobbits, magic, Ficción fantástica inglesa
-              </caption>
-            </div>
-          </a>
-        </div>
-        <!-- END OF SEARCH RESULT -->
       </div>
     </header>
 
@@ -208,4 +135,26 @@
 </html>
 
 <!-- RESULT-TEMPLATE -->
-<div id="result-template"></div>
+<div id="placeholder-result" class="hidden">
+  <div
+    class="w-full flex flex-col md:flex-row justify-start items-center p-4 gap-4 bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <img id="image" class="h-36 w-auto rounded-lg" src="" alt="image" />
+    <div
+      class="flex flex-col items-center md:items-start justify-center text-gray-400"
+    >
+      <h5 id="title" class="mb-2 text-2xl font-bold tracking-tight"></h5>
+      <h6 class="font-bold">
+        Author(s):
+        <p
+          id="author"
+          class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+        ></p>
+      </h6>
+      <p
+        id="subject"
+        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+      ></p>
+    </div>
+  </div>
+</div>
