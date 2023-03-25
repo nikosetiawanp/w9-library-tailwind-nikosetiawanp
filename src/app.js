@@ -43,17 +43,17 @@ let loadBooks = () => {
       let placeholderLibrary = document.getElementById("placeholder-library");
       let placeholderResult = document.getElementById("placeholder-result");
 
-      image.src = data.books[0].image;
       title.innerText = data.books[0].title;
       author.innerText = data.books[0].authors;
+      image.src = data.books[0].image;
       // subject.innerText = data.books[0].subjects;
 
       for (let i = 1; i <= data.books.length; i++) {
         bookLibrary.innerHTML += placeholderLibrary.innerHTML;
         // searchResult.innerHTML += placeholderResult.innerHTML;
-        image.src = data.books[i].image;
         title.innerText = data.books[i].title;
         author.innerText = data.books[i].authors;
+        image.src = data.books[i].image;
         // subject.innerText = data.books[i].subjects;
       }
     });
@@ -89,12 +89,56 @@ let loadSearch = () => {
 };
 
 // SEARCH BOOK
-let searchBook = () => {
-  let div = getElementByTagName("div");
-  for (let i = 0; i < div.length; i++) [0];
-  if (div) {
+
+// let searchBook = () => {
+//   fetch("data.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       let submit = document.getElementById("submit");
+//       let search = document.getElementById("search").value.toLowerCase();
+//       let searchResult = document.getElementById("search-result");
+//       let placeholderResult = document.querySelectorAll("#placeholder-result");
+//       let bookDetailContainer = document.querySelectorAll(
+//         "book-detail-container"
+//       );
+
+//       if (search === "") {
+//         searchResult.classList.replace("flex", "hidden");
+//         searchResult.innerHTML = "Please enter keyword";
+//       } else if (!searchResult.innerHTML.includes(search)) {
+//         searchResult.classList.replace("hidden", "flex");
+//         searchResult.innerHTML =
+//           "No books found, please try with another keyword";
+//       } else if (searchResult.innerHTML.includes(search)) {
+//         bookDetailContainer.classList.replace("hidden", "flex");
+//         searchResult.classList.replace("hidden", "flex");
+//       }
+//     });
+// };
+
+let searchBook = async () => {
+  let submit = document.getElementById("submit");
+  let search = document.getElementById("search").value;
+  let searchResult = document.getElementById("search-result");
+  let placeholderResult = document.querySelectorAll("#placeholder-result");
+  let bookDetailContainer = document.querySelectorAll("#book-detail-container");
+
+  if (!search) {
+    searchResult.classList.replace("hidden", "flex");
+    searchResult.innerHTML = "Please enter keyword";
+  } else if (!searchResult.innerHTML.includes(search)) {
+    searchResult.classList.replace("hidden", "flex");
+    searchResult.innerHTML = "Please enter keyword";
   }
 };
+
+let submit = document.getElementById("submit");
+let search = document.getElementById("search").value;
+let searchResult = document.getElementById("search-result");
+let placeholderResult = document.querySelectorAll("#placeholder-result");
+let bookDetailContainer = document.querySelectorAll("#book-detail-container");
+
+console.log(bookDetailContainer.length);
 
 /**
  * To get books data, you should make sure that your function is async function
