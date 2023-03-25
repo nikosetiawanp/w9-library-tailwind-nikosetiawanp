@@ -8,7 +8,7 @@
 
     <link href="/dist/output.css" rel="stylesheet" />
   </head>
-  <body class="bg-library-1" onload="loadSearch()">
+  <body class="bg-library-1" onload="">
     <!-- NAV -->
     <nav
       class="bg-gray-800 flex flex-row justify-center items-center md:justify-start gap-10 h-16 px-8 relative"
@@ -117,7 +117,7 @@
 
       <!-- RESULT CONTAINER-->
       <div
-        class="container flex flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl text-white mb-8"
+        class="container hidden flex-col items-center p-8 bg-gray-800 rounded-lg max-w-3xl text-white mb-8"
         id="search-result"
       >
         <!-- SEARCH RESULT -->
@@ -135,7 +135,6 @@
   </body>
 </html>
 
-<!-- RESULT-TEMPLATE -->
 <div id="placeholder-result" class="hidden">
   <div
     id="book-detail-container"
@@ -160,3 +159,4 @@
     </div>
   </div>
 </div>
+<!-- RESULT-TEMPLATE -->
