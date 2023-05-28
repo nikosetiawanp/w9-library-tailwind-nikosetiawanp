@@ -652,10 +652,6 @@ video {
   max-width: 48rem;
 }
 
-.list-none {
-  list-style-type: none;
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -910,11 +906,6 @@ video {
 .hover\:bg-gray-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .hover\:text-white:hover {
